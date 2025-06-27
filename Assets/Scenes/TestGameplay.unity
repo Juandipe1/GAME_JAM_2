@@ -815,6 +815,7 @@ MonoBehaviour:
   - Attack
   - Defense
   - Grab
+  numberRounds: 3
 --- !u!4 &1092374284
 Transform:
   m_ObjectHideFlags: 0
