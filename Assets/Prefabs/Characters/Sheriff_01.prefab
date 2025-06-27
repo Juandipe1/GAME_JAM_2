@@ -1158,7 +1158,7 @@ GameObject:
   - component: {fileID: 9178571153966622863}
   - component: {fileID: 8445346577285052800}
   m_Layer: 0
-  m_Name: Character_Sheriff_01
+  m_Name: Sheriff_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
