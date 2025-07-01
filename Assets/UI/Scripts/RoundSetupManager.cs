@@ -1,0 +1,89 @@
+// RoundSetupManager.cs
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+
+public class RoundSetupManager : MonoBehaviour
+{
+    [Header("Referencias UI")]
+    public GameObject setupPanel; // Panel que aparece al presionar "Play"
+    public TMP_InputField numRondasInput; // Input donde el jugador escribe el número de rondas
+    public GameObject dropdownItem; // Prefab que contiene un Label + Dropdown
+    public Transform dropdownContainer; // Contenedor vertical de todos los Dropdowns
+    public Button confirmarButton;      //Confirma las rondas para generar el dropdown
+    public Button iniciarJuegoButton; // Botón para iniciar el juego.
+    public Image instructions;
+
+    // Lista pública accesible por otros scripts para consultar las selecciones
+    public static List<string> eleccionesRondas = new List<string>();
+
+    private List<TMP_Dropdown> rondasDropdowns = new List<TMP_Dropdown>();
+
+    // Mostrar el panel de configuración
+    public void MostrarPanelConfiguracion()
+    {
+        setupPanel.SetActive(true);
+        iniciarJuegoButton.gameObject.SetActive(false);
+    }
+
+    // Al confirmar el número de rondas
+    public void ConfirmarRondas()
+    {
+        // Limpia dropdowns anteriores si existían
+        foreach (Transform hijo in dropdownContainer)
+            Destroy(hijo.gameObject);
+
+        rondasDropdowns.Clear();
+        eleccionesRondas.Clear();
+
+        int numRondas;
+        if (!int.TryParse(numRondasInput.text, out numRondas) || numRondas <= 0)
+        {
+            Debug.LogWarning("Por favor ingresa un número válido de rondas.");
+            return;
+        }
+        confirmarButton.gameObject.SetActive(false); //Desactiva el botón de confirmar rondas
+
+        // Crear un Dropdown por cada ronda
+        for (int i = 0; i < numRondas; i++)
+        {
+            GameObject nuevoDropdown = Instantiate(dropdownItem, dropdownContainer);
+            TMP_Text label = nuevoDropdown.transform.Find("Label").GetComponent<TMP_Text>();
+            label.text = "Ronda " + (i + 1);
+
+            TMP_Dropdown drop = nuevoDropdown.GetComponentInChildren<TMP_Dropdown>();
+            drop.ClearOptions();
+            drop.AddOptions(new List<string> { "Ataque", "Agarre", "Defensa" });
+
+            rondasDropdowns.Add(drop);
+        }
+
+        iniciarJuegoButton.gameObject.SetActive(true);
+        instructions.gameObject.SetActive(true);
+    }
+
+    // Al presionar "Jugar"
+    public void IniciarJuego()
+    {
+        eleccionesRondas.Clear();
+        foreach (TMP_Dropdown drop in rondasDropdowns)
+        {
+            string seleccion = drop.options[drop.value].text;
+            eleccionesRondas.Add(seleccion);
+        }
+
+        // Aquí se accede a eleccionesRondas para integrarlo al juego
+        Debug.Log("Selecciones registradas:");
+        foreach (string opcion in eleccionesRondas)
+        {
+            Debug.Log(opcion);
+        }
+
+        // Ocultar panel y continuar con siguiente paso (inicio del juego, cargue de escena).
+        setupPanel.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
+    }
+}
