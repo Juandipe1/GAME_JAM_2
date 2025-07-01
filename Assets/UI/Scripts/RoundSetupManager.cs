@@ -10,29 +10,30 @@ public class RoundSetupManager : MonoBehaviour
 {
     [Header("Referencias UI")]
     public GameObject setupPanel; // Panel que aparece al presionar "Play"
-    public TMP_InputField numRondasInput; // Input donde el jugador escribe el número de rondas
+    public TMP_InputField numRondasInput; // Input donde el jugador escribe el nï¿½mero de rondas
     public GameObject dropdownItem; // Prefab que contiene un Label + Dropdown
     public Transform dropdownContainer; // Contenedor vertical de todos los Dropdowns
     public Button confirmarButton;      //Confirma las rondas para generar el dropdown
-    public Button iniciarJuegoButton; // Botón para iniciar el juego.
+    public Button iniciarJuegoButton; // Botï¿½n para iniciar el juego.
     public Image instructions;
+    public Manager manager;
 
-    // Lista pública accesible por otros scripts para consultar las selecciones
+    // Lista pï¿½blica accesible por otros scripts para consultar las selecciones
     public static List<string> eleccionesRondas = new List<string>();
 
     private List<TMP_Dropdown> rondasDropdowns = new List<TMP_Dropdown>();
 
-    // Mostrar el panel de configuración
+    // Mostrar el panel de configuraciï¿½n
     public void MostrarPanelConfiguracion()
     {
         setupPanel.SetActive(true);
         iniciarJuegoButton.gameObject.SetActive(false);
     }
 
-    // Al confirmar el número de rondas
+    // Al confirmar el nï¿½mero de rondas
     public void ConfirmarRondas()
     {
-        // Limpia dropdowns anteriores si existían
+        // Limpia dropdowns anteriores si existï¿½an
         foreach (Transform hijo in dropdownContainer)
             Destroy(hijo.gameObject);
 
@@ -42,10 +43,10 @@ public class RoundSetupManager : MonoBehaviour
         int numRondas;
         if (!int.TryParse(numRondasInput.text, out numRondas) || numRondas <= 0)
         {
-            Debug.LogWarning("Por favor ingresa un número válido de rondas.");
+            Debug.LogWarning("Por favor ingresa un nï¿½mero vï¿½lido de rondas.");
             return;
         }
-        confirmarButton.gameObject.SetActive(false); //Desactiva el botón de confirmar rondas
+        confirmarButton.gameObject.SetActive(false); //Desactiva el botï¿½n de confirmar rondas
 
         // Crear un Dropdown por cada ronda
         for (int i = 0; i < numRondas; i++)
@@ -75,15 +76,16 @@ public class RoundSetupManager : MonoBehaviour
             eleccionesRondas.Add(seleccion);
         }
 
-        // Aquí se accede a eleccionesRondas para integrarlo al juego
         Debug.Log("Selecciones registradas:");
         foreach (string opcion in eleccionesRondas)
         {
             Debug.Log(opcion);
         }
 
-        // Ocultar panel y continuar con siguiente paso (inicio del juego, cargue de escena).
+        // Oculta el panel de configuraciÃ³n
         setupPanel.SetActive(false);
-        SceneManager.LoadScene("MainMenu");
+
+        // Llama la corrutina directamente
+        manager.IniciarJuegoDesdeRoundSetup();
     }
 }
