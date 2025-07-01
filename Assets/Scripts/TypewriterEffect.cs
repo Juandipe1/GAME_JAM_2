@@ -13,6 +13,9 @@ public class type : MonoBehaviour
     public float scrollSpeed = 20f;
     public string nextSceneName = "MainMenu"; // ← nombre exacto de la escena
 
+    public AudioSource audioSource;     // ← Asigna esto desde el Inspector
+    public AudioClip typingSound;       // ← Clip corto tipo tecla
+
     private RectTransform textRect;
 
     void Start()
@@ -28,6 +31,13 @@ public class type : MonoBehaviour
         {
             textUI.text += c;
             textRect.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
+
+            // Reproducir sonido solo para letras o números
+            if (char.IsLetterOrDigit(c) && audioSource != null && typingSound != null)
+            {
+                audioSource.PlayOneShot(typingSound);
+            }
+
             yield return new WaitForSeconds(typingSpeed);
         }
 
