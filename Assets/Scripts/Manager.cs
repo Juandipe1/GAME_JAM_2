@@ -1,58 +1,114 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Manager : MonoBehaviour
 {
+    [Header("Opciones")]
     [SerializeField] string[] choises;
-    [SerializeField] int numberRounds;
 
-    int buttomPresed = 0;
+    [Header("Delay entre rondas")]
+    [SerializeField] float delayBetweenRounds = 1f;
+
+    [Header("Referencias UI")]
+    [SerializeField] TMP_Text playerLivesText;
+    [SerializeField] TMP_Text cpuLivesText;
+    [SerializeField] TMP_Text resultadoFinalText;
 
     List<string> playerChoises = new List<string>();
     List<string> cpuChoises = new List<string>();
 
-    public void Play(string myChoise)
+    int playerLives;
+    int cpuLives;
+
+    public void IniciarJuegoDesdeRoundSetup()
     {
-        if (buttomPresed < numberRounds)
-        {
-            string cpuChoise = choises[Random.Range(0, choises.Length)];
+        int totalRounds = RoundSetupManager.eleccionesRondas.Count;
+        playerLives = totalRounds;
+        cpuLives = totalRounds;
 
-            playerChoises.Add(myChoise);
-            cpuChoises.Add(cpuChoise);
+        ActualizarTextoVidas();
 
-            buttomPresed++;
-
-            if (buttomPresed == numberRounds)
-            {
-                ShowResults();
-                Debug.Log("All rounds have been played.");
-            }
-        }
+        StartCoroutine(PlayAllRounds());
     }
 
-    private void ShowResults()
+    IEnumerator PlayAllRounds()
     {
-        Debug.Log("====RESULTS====");
+        int totalRounds = RoundSetupManager.eleccionesRondas.Count;
 
-        for (int i = 0; i < numberRounds; i++)
+        for (int i = 0; i < totalRounds; i++)
         {
-            Debug.Log($"Round {i + 1}: Player: {playerChoises[i]} | CPU: {cpuChoises[i]}");
-            if (playerChoises[i] == cpuChoises[i])
-            {
-                Debug.Log("Empate");
-            }
+            string playerChoiceUI = RoundSetupManager.eleccionesRondas[i];
+            string playerChoice = ConvertChoiceToEnglish(playerChoiceUI);
+            string cpuChoice = choises[Random.Range(0, choises.Length)];
 
-            if ((cpuChoises[i] == "Attack" && playerChoises[i] == "Defense") ||
-                (cpuChoises[i] == "Defense" && playerChoises[i] == "Grab") ||
-                (cpuChoises[i] == "Grab" && playerChoises[i] == "Attack"))
+            playerChoises.Add(playerChoice);
+            cpuChoises.Add(cpuChoice);
+
+            Debug.Log($"--- Ronda {i + 1} ---");
+            Debug.Log($"Player: {playerChoice} | CPU: {cpuChoice}");
+
+            if (playerChoice == cpuChoice)
             {
-                Debug.Log("Ganaste");
+                Debug.Log("Empate — nadie pierde vida.");
+            }
+            else if ((cpuChoice == "Attack" && playerChoice == "Defense") ||
+                     (cpuChoice == "Defense" && playerChoice == "Grab") ||
+                     (cpuChoice == "Grab" && playerChoice == "Attack"))
+            {
+                Debug.Log("Ganaste esta ronda. CPU pierde una vida.");
+                cpuLives--;
             }
             else
             {
-                Debug.Log("Perdiste");
+                Debug.Log("Perdiste esta ronda. Tú pierdes una vida.");
+                playerLives--;
             }
+
+            ActualizarTextoVidas();
+
+            yield return new WaitForSeconds(delayBetweenRounds);
+        }
+
+        MostrarResultadoFinal();
+    }
+
+    void ActualizarTextoVidas()
+    {
+        playerLivesText.text = $"Jugador: {playerLives} vidas";
+        cpuLivesText.text = $"CPU: {cpuLives} vidas";
+    }
+
+    void MostrarResultadoFinal()
+    {
+        string resultado;
+        if (playerLives > cpuLives)
+        {
+            resultado = "🎉 ¡Ganaste el juego!";
+        }
+        else if (cpuLives > playerLives)
+        {
+            resultado = "💀 Perdiste el juego.";
+        }
+        else
+        {
+            resultado = "🤝 El juego terminó en empate.";
+        }
+
+        Debug.Log(resultado);
+        if (resultadoFinalText != null)
+            resultadoFinalText.text = resultado;
+    }
+
+    private string ConvertChoiceToEnglish(string uiChoice)
+    {
+        switch (uiChoice)
+        {
+            case "Ataque": return "Attack";
+            case "Agarre": return "Grab";
+            case "Defensa": return "Defense";
+            default: return "Attack";
         }
     }
 }
