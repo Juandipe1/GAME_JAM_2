@@ -6,15 +6,17 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public RoundSetupManager roundSetupManager;
+    public GameObject animacionesMenu;
     public void PlayGame()
     {
         roundSetupManager.MostrarPanelConfiguracion();
         //SceneManager.LoadScene("TestGameplay");
+        animacionesMenu.gameObject.SetActive(false);
     }
 
-    public void ShowInstructions()
+    public void ShowStory()
     {
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene("IntroStory");
     }
 
     public void ShowCredits()
