@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pausar-icon_0: -801378776642797704
+      pausar-icon_1: 1657893284062166593
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
