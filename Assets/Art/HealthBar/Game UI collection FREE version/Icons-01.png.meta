@@ -231,6 +231,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1210,7 +1223,53 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icons-01_0: 3199721268567093524
+      Icons-01_1: 8999061743526412332
+      Icons-01_10: -7654980035177703483
+      Icons-01_11: -1574927380248667629
+      Icons-01_12: 7254359178501445545
+      Icons-01_13: 4535685582183636856
+      Icons-01_14: 5498191410290016134
+      Icons-01_15: -6192032370066373032
+      Icons-01_16: 7840715826879384300
+      Icons-01_17: -8790353885237327173
+      Icons-01_18: -2959189886802259882
+      Icons-01_19: -241596206302090280
+      Icons-01_2: -1168069914903498146
+      Icons-01_20: -8829288294056416662
+      Icons-01_21: 7608729755054598673
+      Icons-01_22: -4057639058057691663
+      Icons-01_23: -8254216233107790570
+      Icons-01_24: -7665839576660106697
+      Icons-01_25: -6911872609930804049
+      Icons-01_26: -3708978798885753738
+      Icons-01_27: -6966493632919367357
+      Icons-01_28: -1082356239834691128
+      Icons-01_29: -4316702942656438177
+      Icons-01_3: -2861519097887423860
+      Icons-01_30: -3262380217188676906
+      Icons-01_31: -8089532313899067552
+      Icons-01_32: -3405231588636328268
+      Icons-01_33: 6155927464361502606
+      Icons-01_34: 8175143831892758284
+      Icons-01_35: 4718369008889680342
+      Icons-01_36: 6274502301238125842
+      Icons-01_37: 9031995646557823835
+      Icons-01_38: -5718702604333571582
+      Icons-01_39: -3053623991573477427
+      Icons-01_4: -404286885584570256
+      Icons-01_40: 5069068082445363741
+      Icons-01_41: 8413526599283096083
+      Icons-01_42: -1593110161991009510
+      Icons-01_43: 6737608488853182083
+      Icons-01_44: 4103985990564059658
+      Icons-01_45: -1864646238014432760
+      Icons-01_5: 7276058022467025084
+      Icons-01_6: 1535666685396529507
+      Icons-01_7: 8613294179020000750
+      Icons-01_8: -492651462414896456
+      Icons-01_9: -8868593644164675323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

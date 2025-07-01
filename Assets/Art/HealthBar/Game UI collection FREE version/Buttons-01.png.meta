@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -874,7 +887,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Buttons-01_0: -5308818627962290481
+      Buttons-01_1: 7066909262193987662
+      Buttons-01_10: 6719248418378200104
+      Buttons-01_11: -346853994634935653
+      Buttons-01_12: 6784294549934470220
+      Buttons-01_13: 675285496795430960
+      Buttons-01_14: -6025757432658501256
+      Buttons-01_15: 7914091534737842095
+      Buttons-01_16: 6547820594414606125
+      Buttons-01_17: 7884750365707710194
+      Buttons-01_18: -1842547519822170540
+      Buttons-01_19: -1072537539472005045
+      Buttons-01_2: 8666473941457320446
+      Buttons-01_20: -6784772790430510099
+      Buttons-01_21: -5395764912209490522
+      Buttons-01_22: 3209364208069802922
+      Buttons-01_23: -9121817361389493597
+      Buttons-01_24: 9039161408249736700
+      Buttons-01_25: -1594117151178050470
+      Buttons-01_26: -6982040469517219773
+      Buttons-01_27: 1647618052209049492
+      Buttons-01_28: -579990979616871830
+      Buttons-01_29: 522192847526989449
+      Buttons-01_3: 1406058480320589408
+      Buttons-01_30: 8255580948069992560
+      Buttons-01_31: -1506979701452882041
+      Buttons-01_4: -8524411015633075636
+      Buttons-01_5: -335778928025917862
+      Buttons-01_6: 631056100677143229
+      Buttons-01_7: 8839060754771048296
+      Buttons-01_8: -5481340634436100481
+      Buttons-01_9: 4434683613026273218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
