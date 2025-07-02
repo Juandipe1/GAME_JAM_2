@@ -69,6 +69,8 @@ public class RoundSetupManager : MonoBehaviour
     // Al presionar "Jugar"
     public void IniciarJuego()
     {
+        SceneManager.LoadScene("LevelBackground");
+
         eleccionesRondas.Clear();
         foreach (TMP_Dropdown drop in rondasDropdowns)
         {

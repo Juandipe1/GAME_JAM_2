@@ -20,8 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroStory.unity
     guid: dabbf06d8161cb947bcf6d69e504abf4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/IntroStory 1.unity
     guid: 4c93f3df74c57114985e19b53eb1af62
+  - enabled: 1
+    path: Assets/Scenes/LevelBackground.unity
+    guid: 2c251cfe6ab897e4bb491cb9205b45b7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

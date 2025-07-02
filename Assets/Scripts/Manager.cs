@@ -85,15 +85,15 @@ public class Manager : MonoBehaviour
         string resultado;
         if (playerLives > cpuLives)
         {
-            resultado = "🎉 ¡Ganaste el juego!";
+            resultado = "¡Ganaste el juego!";
         }
         else if (cpuLives > playerLives)
         {
-            resultado = "💀 Perdiste el juego.";
+            resultado = "Perdiste el juego.";
         }
         else
         {
-            resultado = "🤝 El juego terminó en empate.";
+            resultado = "El juego terminó en empate.";
         }
 
         Debug.Log(resultado);
