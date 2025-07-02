@@ -20,8 +20,17 @@ public class RoundSetupManager : MonoBehaviour
 
     // Lista p�blica accesible por otros scripts para consultar las selecciones
     public static List<string> eleccionesRondas = new List<string>();
+    public static List<string> eleccionesJugador = new List<string>();
+    public static List<string> eleccionesCPU = new List<string>();
+    public static List<string> resultadosRonda = new List<string>();
+
+    public static int vidasJugador;
+    public static int vidasCPU;
+
 
     private List<TMP_Dropdown> rondasDropdowns = new List<TMP_Dropdown>();
+
+
 
     // Mostrar el panel de configuraci�n
     public void MostrarPanelConfiguracion()
@@ -69,7 +78,7 @@ public class RoundSetupManager : MonoBehaviour
     // Al presionar "Jugar"
     public void IniciarJuego()
     {
-        SceneManager.LoadScene("LevelBackground");
+        SceneManager.LoadScene("BarraVida");
 
         eleccionesRondas.Clear();
         foreach (TMP_Dropdown drop in rondasDropdowns)
@@ -78,16 +87,13 @@ public class RoundSetupManager : MonoBehaviour
             eleccionesRondas.Add(seleccion);
         }
 
-        Debug.Log("Selecciones registradas:");
-        foreach (string opcion in eleccionesRondas)
-        {
-            Debug.Log(opcion);
-        }
+        vidasJugador = eleccionesRondas.Count;
+        vidasCPU = eleccionesRondas.Count;
+        eleccionesJugador.Clear();
+        eleccionesCPU.Clear();
+        resultadosRonda.Clear();
 
-        // Oculta el panel de configuración
         setupPanel.SetActive(false);
-
-        // Llama la corrutina directamente
-        manager.IniciarJuegoDesdeRoundSetup();
     }
+
 }

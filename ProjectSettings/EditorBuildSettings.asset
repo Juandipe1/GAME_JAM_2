@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelBackground.unity
     guid: 2c251cfe6ab897e4bb491cb9205b45b7
+  - enabled: 1
+    path: Assets/Scenes/BarraVida.unity
+    guid: d74b52cd9d14588498b762939e3e1034
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
