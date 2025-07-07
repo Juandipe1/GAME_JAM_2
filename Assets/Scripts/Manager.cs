@@ -23,12 +23,6 @@ public class Manager : MonoBehaviour
     int cpuLives;
 
 
-    void Start()
-    {
-        Debug.Log("Manager iniciado automáticamente en BarraVida");
-        IniciarJuegoDesdeRoundSetup();
-    }
-
     public void IniciarJuegoDesdeRoundSetup()
     {
         int totalRounds = RoundSetupManager.eleccionesRondas.Count;
