@@ -766,8 +766,6 @@ MonoBehaviour:
   playerLivesText: {fileID: 976546012}
   cpuLivesText: {fileID: 811988653}
   resultadoFinalText: {fileID: 976546012}
-  robotCombatAnimation: {fileID: 0}
-  humanCombatAnimation: {fileID: 0}
 --- !u!1 &623334891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,8 +2514,6 @@ MonoBehaviour:
   playerLivesText: {fileID: 976546012}
   cpuLivesText: {fileID: 976546012}
   resultadoFinalText: {fileID: 811988653}
-  robotCombatAnimation: {fileID: 0}
-  humanCombatAnimation: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

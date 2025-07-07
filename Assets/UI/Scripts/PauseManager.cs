@@ -11,7 +11,7 @@ public class PauseManager : MonoBehaviour
     public Button pauseButton;
     public Button resumeButton;
     public Button restartButton;
-
+    public GameObject canvasPlayer;
     private bool isPaused = false;
 
     void Start()
@@ -26,6 +26,7 @@ public class PauseManager : MonoBehaviour
 
     void TogglePause()
     {
+        canvasPlayer.SetActive(false);
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
         panelPrincipal.SetActive(isPaused);
@@ -34,6 +35,7 @@ public class PauseManager : MonoBehaviour
 
     void ResumeGame()
     {
+        canvasPlayer.SetActive(true);
         isPaused = false;
         pausePanel.SetActive(false);
         panelPrincipal.SetActive(false);
@@ -43,6 +45,7 @@ public class PauseManager : MonoBehaviour
     void RestartGame()
     {
         Time.timeScale = 1f; // Asegura que el tiempo esté corriendo
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 }

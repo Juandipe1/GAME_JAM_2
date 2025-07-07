@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6117125430817754238
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2198535518198908592, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b8974d32285c0e04ba25ffc87253ed4a, type: 2}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.467516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.467516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.467516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.8687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17563
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.52511424
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8510318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -116.648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148563895864172109, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306243120611965461, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_Name
+      value: CyborgNinja_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306243120611965461, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd1b6a1481baa5d46b6cb46b7d9765a6, type: 3}

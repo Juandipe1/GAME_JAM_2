@@ -139,10 +139,10 @@ public class Manager : MonoBehaviour
     {
         switch (uiChoice)
         {
-            case "Ataque": return "Attack";
-            case "Agarre": return "Grab";
-            case "Defensa": return "Defense";
-            default: return "Attack";
+            case "Ataque": return "Ataque";
+            case "Agarre": return "Agarre";
+            case "Defensa": return "Defensa";
+            default: return "Ataque";
         }
     }
 }

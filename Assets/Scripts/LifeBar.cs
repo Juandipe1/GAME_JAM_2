@@ -7,6 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class LifeBar : MonoBehaviour
 {
+    [Header("Avatares disponibles")]
+    public List<GameObject> avataresJugador;
+    public List<GameObject> avataresCPU;
+
+    [Header("Puntos de aparición")]
+    public Transform puntoJugador;
+    public Transform puntoCPU;
+
     [Header("Referencias UI")]
     public Image playerLifeBar;
     public Image cpuLifeBar;
@@ -16,7 +24,7 @@ public class LifeBar : MonoBehaviour
     [Header("Tiempos entre pasos")]
     public float delayEntrePasos = 1f;
 
-        [SerializeField] Animator robotCombatAnimation;
+    [SerializeField] Animator robotCombatAnimation;
     [SerializeField] Animator humanCombatAnimation;
 
     int vidasJugador;
@@ -31,6 +39,18 @@ public class LifeBar : MonoBehaviour
         vidasCPU = RoundSetupManager.vidasCPU;
         totalRondas = RoundSetupManager.eleccionesRondas.Count;
         resultadoTexto.text = ""; // Limpiar texto de resultados al comenzar
+
+        // Elegir e instanciar avatar aleatorio para el jugador
+        int indiceJugador = Random.Range(0, avataresJugador.Count);
+        GameObject avatarJugador = Instantiate(avataresJugador[indiceJugador], puntoJugador.position, puntoJugador.rotation);
+
+        // Elegir e instanciar avatar aleatorio para la CPU
+        int indiceCPU = Random.Range(0, avataresCPU.Count);
+        GameObject avatarCPU = Instantiate(avataresCPU[indiceCPU], puntoCPU.position, puntoCPU.rotation);
+
+        // Obtener animators desde los nuevos avatares instanciados
+        humanCombatAnimation = avatarJugador.GetComponent<Animator>();
+        robotCombatAnimation = avatarCPU.GetComponent<Animator>();
 
         StartCoroutine(JugarRondas());
     }

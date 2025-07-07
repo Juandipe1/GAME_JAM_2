@@ -815,7 +815,10 @@ MonoBehaviour:
   - Attack
   - Defense
   - Grab
-  numberRounds: 3
+  delayBetweenRounds: 1
+  playerLivesText: {fileID: 0}
+  cpuLivesText: {fileID: 0}
+  resultadoFinalText: {fileID: 0}
 --- !u!4 &1092374284
 Transform:
   m_ObjectHideFlags: 0
