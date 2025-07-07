@@ -78,8 +78,6 @@ public class RoundSetupManager : MonoBehaviour
     // Al presionar "Jugar"
     public void IniciarJuego()
     {
-        SceneManager.LoadScene("BarraVida");
-
         eleccionesRondas.Clear();
         foreach (TMP_Dropdown drop in rondasDropdowns)
         {
@@ -94,6 +92,13 @@ public class RoundSetupManager : MonoBehaviour
         resultadosRonda.Clear();
 
         setupPanel.SetActive(false);
+
+        SceneManager.LoadScene("BarraVida");
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
 }

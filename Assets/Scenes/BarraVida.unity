@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 8445346577285052800, guid: 77105db777ed4b147ba8a96f4b158685, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 82319aabdf6fb8d458145fde030d1576, type: 2}
     - target: {fileID: 9178571153966622863, guid: 77105db777ed4b147ba8a96f4b158685, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7
@@ -257,6 +257,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77105db777ed4b147ba8a96f4b158685, type: 3}
+--- !u!95 &32949893 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8445346577285052800, guid: 77105db777ed4b147ba8a96f4b158685, type: 3}
+  m_PrefabInstance: {fileID: 32949891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &94753877
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 147}
+  m_AnchoredPosition: {x: -10, y: 131}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169173007
@@ -1486,6 +1491,8 @@ MonoBehaviour:
   rondaTexto: {fileID: 1823284520}
   resultadoTexto: {fileID: 169173007}
   delayEntrePasos: 3
+  robotCombatAnimation: {fileID: 1316630227}
+  humanCombatAnimation: {fileID: 32949893}
 --- !u!1 &1060139210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,11 +1844,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6872868569397181872, guid: 7c61080b2000f4e47812f8fd3008dfa9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b8974d32285c0e04ba25ffc87253ed4a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c61080b2000f4e47812f8fd3008dfa9, type: 3}
+--- !u!95 &1316630227 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6872868569397181872, guid: 7c61080b2000f4e47812f8fd3008dfa9, type: 3}
+  m_PrefabInstance: {fileID: 1316630225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1391325679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,7 +2324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 308}
+  m_AnchoredPosition: {x: 29, y: 453}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823284520

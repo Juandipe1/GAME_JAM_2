@@ -22,6 +22,13 @@ public class Manager : MonoBehaviour
     int playerLives;
     int cpuLives;
 
+
+    void Start()
+    {
+        Debug.Log("Manager iniciado automáticamente en BarraVida");
+        IniciarJuegoDesdeRoundSetup();
+    }
+
     public void IniciarJuegoDesdeRoundSetup()
     {
         int totalRounds = RoundSetupManager.eleccionesRondas.Count;
@@ -49,22 +56,55 @@ public class Manager : MonoBehaviour
             Debug.Log($"--- Ronda {i + 1} ---");
             Debug.Log($"Player: {playerChoice} | CPU: {cpuChoice}");
 
-            if (playerChoice == cpuChoice)
-            {
-                Debug.Log("Empate — nadie pierde vida.");
-            }
-            else if ((cpuChoice == "Attack" && playerChoice == "Defense") ||
-                     (cpuChoice == "Defense" && playerChoice == "Grab") ||
-                     (cpuChoice == "Grab" && playerChoice == "Attack"))
-            {
-                Debug.Log("Ganaste esta ronda. CPU pierde una vida.");
-                cpuLives--;
-            }
-            else
-            {
-                Debug.Log("Perdiste esta ronda. Tú pierdes una vida.");
-                playerLives--;
-            }
+            //if (playerChoice == cpuChoice)
+            //{
+            //    Debug.Log("Empate — nadie pierde vida.");
+            //    robotCombatAnimation.SetTrigger(cpuChoice);
+            //    humanCombatAnimation.SetTrigger(playerChoice);
+            //}
+            //else if (cpuChoice == "Attack" && playerChoice == "Defense")
+            //{
+            //    robotCombatAnimation.SetTrigger("Attack");
+            //    humanCombatAnimation.SetTrigger("Defense");
+            //    Debug.Log("Ganaste esta ronda. CPU pierde una vida.");
+            //    cpuLives--;
+            //}
+            //else if (cpuChoice == "Defense" && playerChoice == "Grab") 
+            //{
+            //    robotCombatAnimation.SetTrigger("Defense");
+            //    humanCombatAnimation.SetTrigger("Grab");
+            //    Debug.Log("Ganaste esta ronda. CPU pierde una vida.");
+            //    cpuLives--;
+            //}
+            //else if (cpuChoice == "Grab" && playerChoice == "Attack")
+            //{
+            //    robotCombatAnimation.SetTrigger("Grab");
+            //    humanCombatAnimation.SetTrigger("Attack");
+            //    Debug.Log("Ganaste esta ronda. CPU pierde una vida.");
+            //    cpuLives--;
+            //}
+            //else if (playerChoice == "Attack" && cpuChoice == "Defense")
+            //{
+            //    robotCombatAnimation.SetTrigger("Defense");
+            //    humanCombatAnimation.SetTrigger("Attack");
+            //    Debug.Log("Perdiste esta ronda. Tú pierdes una vida.");
+            //    playerLives--;
+            //}
+            //else if (playerChoice == "Defense" && cpuChoice == "Grab")
+            //{
+            //    robotCombatAnimation.SetTrigger("Grab");
+            //    humanCombatAnimation.SetTrigger("Defense");
+            //    Debug.Log("Perdiste esta ronda. Tú pierdes una vida.");
+            //    playerLives--;
+            //}
+            //else if (playerChoice == "Grab" && cpuChoice == "Attack")
+            //{
+            //    robotCombatAnimation.SetTrigger("Attack");
+            //    humanCombatAnimation.SetTrigger("Grab");
+            //    Debug.Log("Perdiste esta ronda. Tú pierdes una vida.");
+            //    playerLives--;
+            //}
+
 
             ActualizarTextoVidas();
 
